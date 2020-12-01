@@ -198,6 +198,10 @@ match_srxi_as_c_srxi (const struct riscv_opcode *op, insn_t insn)
 const struct riscv_opcode riscv_opcodes[] =
 {
 /* name,     xlen, isa,   operands, match, mask, match_func, pinfo.  */
+{"aes64esm",    0, INSN_CLASS_C,   "d,s,t",  MATCH_AES64ESM, MASK_AES64ESM, match_opcode, 0 },
+{"aes64es",     0, INSN_CLASS_C,   "d,s,t",  MATCH_AES64ES,  MASK_AES64ES,  match_opcode, 0 },
+{"aes64dsm",    0, INSN_CLASS_C,   "d,s,t",  MATCH_AES64DSM, MASK_AES64DSM, match_opcode, 0 },
+{"aes64ds",     0, INSN_CLASS_C,   "d,s,t",  MATCH_AES64DS,  MASK_AES64DS,  match_opcode, 0 },
 {"unimp",       0, INSN_CLASS_C,   "",  0, 0xffffU,  match_opcode, INSN_ALIAS },
 {"unimp",       0, INSN_CLASS_I,   "",  MATCH_CSRRW | (CSR_CYCLE << OP_SH_CSR), 0xffffffffU,  match_opcode, 0 }, /* csrw cycle, x0 */
 {"ebreak",      0, INSN_CLASS_C,   "",  MATCH_C_EBREAK, MASK_C_EBREAK, match_opcode, INSN_ALIAS },
